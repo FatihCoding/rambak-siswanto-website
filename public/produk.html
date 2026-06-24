@@ -1,1 +1,185 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Produk Rambak Siswanto | Katalog Resmi</title><meta name="description" content="Katalog resmi Rambak Siswanto dengan link Shopee, Tokopedia, dan WhatsApp untuk setiap produk."><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="v.css"><script defer src="catalog.js"></script><script defer src="catalog-extra.js"></script></head><body><header><a class="brand" href="index.html"><img src="assets/logo.svg" alt="Logo Rambak Siswanto"><span>Rambak Siswanto</span></a><nav><a href="index.html">Beranda</a><a href="produk.html">Produk</a><a href="profil.html">Profil</a><a href="cara-pesan.html">Cara Pesan</a><a href="mitra.html">Mitra</a><a href="kontak.html">Kontak</a></nav></header><main><section class="hero"><div class="fade"><p class="eyebrow">Katalog resmi</p><h1>Produk Rambak Siswanto</h1><p>Katalog ini mengarahkan pembeli ke kanal resmi. Harga, promo, rating, dan stok mengikuti Shopee/Tokopedia.</p><p class="actions"><a class="btn" href="https://shopee.co.id/siswantogroup" target="_blank" rel="noopener">Buka Shopee</a><a class="btn ghost" href="https://www.tokopedia.com/rambak-kulit-siswanto" target="_blank" rel="noopener">Buka Tokopedia</a></p></div><div class="photo fade"><img src="assets/produk-rambak-real.svg" alt="Foto produk Rambak Siswanto"></div></section><section class="catalog-section"><h2>Katalog produk</h2><p class="section-text">Cari produk, pilih kategori, lalu klik kanal pembelian yang sesuai. Foto produk akan terus diperbarui dari aset asli marketplace/owner.</p><div class="catalog-toolbar"><input id="catalogSearch" type="search" placeholder="Cari rambak, tahu, tongkol, krecek..."><div class="catalog-filters"><button data-filter="all" class="active">Semua</button><button data-filter="rambak">Rambak</button><button data-filter="kerupuk">Kerupuk</button><button data-filter="paket">Paket</button><button data-filter="lainnya">Lainnya</button></div></div><div id="catalogGrid" class="catalog-grid"></div></section></main><footer>Harga, rating, stok, dan promo mengikuti kanal marketplace resmi.</footer></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produk Rambak Siswanto | Katalog Resmi</title>
+  <meta name="description" content="Katalog resmi Rambak Siswanto. Rambak kulit sapi, kerupuk kotak, tongkol, paket, bawang goreng. Link Shopee, Tokopedia, dan WhatsApp per produk.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="v.css">
+  <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="final-fix.css">
+  <link rel="stylesheet" href="catalog.css">
+  <style>
+    /* Page-level overrides for produk.html */
+    .produk-hero {
+      background: linear-gradient(135deg, #2b1210 0%, #4a1a15 100%);
+      color: #fff;
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .produk-hero .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d9a441;
+      margin-bottom: 14px;
+    }
+    .produk-hero h1 {
+      font-size: clamp(24px, 5vw, 38px);
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+    .produk-hero p {
+      font-size: 15px;
+      opacity: .82;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .produk-hero-mktpl {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .produk-hero-mktpl a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .produk-hero-mktpl a:hover { opacity: .85; }
+    .link-shopee-h { background: #ee4d2d; color: #fff; }
+    .link-tokped-h { background: #03ac0e; color: #fff; }
+
+    /* Catalog section */
+    .catalog-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 52px 24px 64px;
+    }
+    .catalog-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2b1210;
+      margin-bottom: 6px;
+    }
+    .catalog-section .catalog-subtitle {
+      font-size: 13.5px;
+      color: #6b3a2a;
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .catalog-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .catalog-note {
+      font-size: 12px;
+      color: #8a5a4a;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #f0e4d8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo.svg" alt="Logo Rambak Siswanto" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-text">Rambak Siswanto</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Beranda</a>
+        <a href="produk.html" class="active">Produk</a>
+        <a href="profil.html">Profil</a>
+        <a href="cara-pesan.html">Cara Pesan</a>
+        <a href="mitra.html">Mitra</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="produk-hero">
+    <span class="eyebrow">Katalog resmi</span>
+    <h1>Produk Rambak Siswanto</h1>
+    <p>Katalog ini mengarahkan pembeli ke kanal resmi. Harga, promo, rating, dan stok mengikuti Shopee/Tokopedia.</p>
+    <div class="produk-hero-mktpl">
+      <a href="https://shopee.co.id/siswantogroup" target="_blank" rel="noopener" class="link-shopee-h">🛍 Buka Shopee</a>
+      <a href="https://www.tokopedia.com/rambak-kulit-siswanto" target="_blank" rel="noopener" class="link-tokped-h">🟢 Buka Tokopedia</a>
+    </div>
+  </section>
+
+  <!-- ─── CATALOG ─── -->
+  <section class="catalog-section">
+    <h2>Katalog produk</h2>
+    <p class="catalog-subtitle">Cari produk, pilih kategori, lalu klik kanal pembelian yang sesuai. Foto produk terus diperbarui dari aset asli.</p>
+
+    <div class="catalog-controls">
+      <!-- Search -->
+      <div class="catalog-search-wrap">
+        <input type="text" id="catalog-search" placeholder="Cari produk... (contoh: rambak, tongkol, 500g)">
+      </div>
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-cat="semua">Semua</button>
+        <button class="filter-btn" data-cat="rambak">Rambak</button>
+        <button class="filter-btn" data-cat="kerupuk">Kerupuk</button>
+        <button class="filter-btn" data-cat="paket">Paket</button>
+        <button class="filter-btn" data-cat="lainnya">Lainnya</button>
+      </div>
+    </div>
+
+    <!-- Grid dirender oleh catalog.js -->
+    <div id="catalog-grid">
+      <div class="catalog-empty">
+        <p>Memuat katalog produk…</p>
+      </div>
+    </div>
+
+    <p class="catalog-note">
+      Harga, rating, stok, dan promo mengikuti kanal marketplace resmi. 
+      Untuk pemesanan besar atau reseller, hubungi <a href="https://wa.me/6281229871936" style="color:#a20f18;font-weight:600;">WhatsApp owner</a>.
+    </p>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Rambak Siswanto</p>
+      <p class="footer-loc">Kartasura, Sukoharjo, Jawa Tengah</p>
+      <div class="footer-links">
+        <a href="produk.html">Produk</a>
+        <a href="profil.html">Profil</a>
+        <a href="cara-pesan.html">Cara Pesan</a>
+        <a href="mitra.html">Mitra</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+      <div class="footer-ext">
+        <a href="https://shopee.co.id/siswantogroup" target="_blank" rel="noopener">Shopee</a>
+        <a href="https://www.tokopedia.com/rambak-kulit-siswanto" target="_blank" rel="noopener">Tokopedia</a>
+        <a href="https://wa.me/6281229871936" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Katalog — catalog.js sudah include catalog-extra sebelumnya; pakai catalog.js baru saja -->
+  <script src="catalog.js"></script>
+
+</body>
+</html>
