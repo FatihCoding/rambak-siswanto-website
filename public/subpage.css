@@ -334,7 +334,7 @@ body {
 .channel-icon,
 .process-list b,
 .flow-list b,
-channel-list b,
+.channel-list b,
 .address-list b {
   border-radius: var(--radius);
   background: var(--ink-deep);
