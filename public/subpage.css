@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --ink: #2e2724;
+  --ink-deep: #17110f;
+  --paper: #faf6f0;
+  --cream: #fffdf8;
+  --clay: #7d3325;
+  --clay-dark: #63281e;
+  --gold: #c08a3e;
+  --spruce: #1f6b55;
+  --muted: #6a5750;
+  --line-soft: rgba(72, 43, 32, 0.15);
+  --radius: 8px;
+  --max: 1180px;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.story-header,
+.catalog-header,
+.mitra-header,
+.order-header,
+.kontak-header {
+  position: fixed;
+  inset: 14px max(16px, 4vw) auto;
+  z-index: 60;
+  display: flex;
+  width: min(calc(100% - 32px), var(--max));
+  height: auto;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.88);
+  padding: 8px;
+  box-shadow: 0 12px 34px rgba(46, 39, 36, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.story-brand,
+.catalog-brand,
+.mitra-brand,
+.order-brand,
+.kontak-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.story-mark,
+.catalog-mark,
+.mitra-mark,
+.order-mark,
+.kontak-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--ink-deep);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+
+.story-header nav,
+.catalog-header nav,
+.mitra-header nav,
+.order-header nav,
+.kontak-header nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: #3d302c;
+  font-weight: 850;
+}
+
+.story-header nav a,
+.catalog-header nav a,
+.mitra-header nav a,
+.order-header nav a,
+.kontak-header nav a {
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  color: #3d302c;
+  font-size: 14px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.story-header nav a:hover,
+.catalog-header nav a:hover,
+.mitra-header nav a:hover,
+.order-header nav a:hover,
+.kontak-header nav a:hover {
+  background: rgba(125, 51, 37, 0.08);
+  color: var(--clay);
+}
+
+.nav-cta {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: var(--ink-deep);
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 0 16px;
+}
+
+.story-hero,
+.catalog-hero,
+.mitra-hero,
+.order-hero,
+.kontak-hero {
+  min-height: 100svh;
+  align-items: center;
+  overflow: hidden;
+  padding: 132px max(22px, calc((100vw - var(--max)) / 2)) 68px;
+  background:
+    linear-gradient(115deg, rgba(31, 107, 85, 0.08), transparent 38%),
+    radial-gradient(circle at 82% 25%, rgba(192, 138, 62, 0.2), transparent 26%),
+    linear-gradient(135deg, #fffdf8 0%, #f6efe4 52%, #fff6e6 100%);
+}
+
+.story-hero::before,
+.catalog-hero::before,
+.mitra-hero::before,
+.order-hero::before,
+.kontak-hero::before {
+  inset: 0;
+  background:
+    linear-gradient(112deg, transparent 0 48%, rgba(125, 51, 37, 0.06) 48% 49%, transparent 49% 100%),
+    repeating-linear-gradient(90deg, rgba(46, 39, 36, 0.03) 0 1px, transparent 1px 20px);
+  animation: none;
+  transform: none;
+}
+
+.story-hero::after,
+.catalog-hero::after,
+.mitra-hero::after,
+.order-hero::after,
+.kontak-hero::after {
+  display: none;
+}
+
+.eyebrow {
+  color: var(--clay);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.story-copy h1,
+.catalog-copy h1,
+.mitra-copy h1,
+.order-copy h1,
+.kontak-copy h1,
+.timeline-section h2,
+.process-copy h2,
+.exposure-card h2,
+.catalog-intro h2,
+.section-head h2,
+.flow-copy h2,
+.trust-card h2,
+.channel-copy h2,
+.note-card h2,
+.address-copy h2,
+.final-card h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.story-copy h1,
+.catalog-copy h1,
+.mitra-copy h1,
+.order-copy h1,
+.kontak-copy h1 {
+  max-width: 760px;
+  font-size: 5.1rem;
+  line-height: 0.92;
+}
+
+.timeline-section h2,
+.process-copy h2,
+.exposure-card h2,
+.catalog-intro h2,
+.section-head h2,
+.flow-copy h2,
+.trust-card h2,
+.channel-copy h2,
+.note-card h2,
+.address-copy h2,
+.final-card h2 {
+  font-size: 3.8rem;
+  line-height: 0.98;
+}
+
+.story-copy p,
+.catalog-copy p,
+.mitra-copy p,
+.order-copy p,
+.kontak-copy p {
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.btn,
+.path-card a,
+.channel-card a,
+.product-cta a {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--clay);
+  color: var(--cream);
+  box-shadow: 0 14px 34px rgba(125, 51, 37, 0.18);
+  padding: 0 18px;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.btn:hover,
+.path-card a:hover,
+.channel-card a:hover,
+.product-cta a:hover {
+  background: var(--clay-dark);
+  transform: translateY(-1px);
+}
+
+.btn.ghost,
+.product-cta a,
+.product-cta a:nth-child(2),
+.product-cta a:nth-child(3) {
+  border-color: var(--line-soft);
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.btn.ghost:hover,
+.product-cta a:hover,
+.product-cta a:nth-child(2):hover,
+.product-cta a:nth-child(3):hover {
+  border-color: rgba(125, 51, 37, 0.24);
+  background: rgba(125, 51, 37, 0.06);
+}
+
+.heritage-panel,
+.catalog-showcase,
+.mitra-visual,
+.order-visual,
+.kontak-visual,
+.exposure-card,
+.trust-card,
+.note-card,
+.final-card {
+  border-radius: var(--radius);
+  box-shadow: 0 24px 70px rgba(46, 39, 36, 0.13);
+}
+
+.heritage-panel::before,
+.catalog-stage,
+.partner-stage,
+.order-stage,
+.contact-stage {
+  border-radius: var(--radius);
+}
+
+.stamp,
+.catalog-stage::before,
+.partner-stage::before,
+.order-stage::before,
+.contact-stage::before {
+  max-width: 100%;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  letter-spacing: 0;
+}
+
+.timeline-grid,
+.fit-grid,
+.path-grid,
+.channel-grid {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.timeline-grid article,
+.product-card,
+.fit-card,
+.path-card,
+.channel-card,
+.process-list div,
+.flow-list div,
+.channel-list div,
+.address-list div {
+  border-color: var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(46, 39, 36, 0.06);
+}
+
+.timeline-grid span,
+.fit-icon,
+.path-icon,
+.channel-icon,
+.process-list b,
+.flow-list b,
+.channel-list b,
+.address-list b {
+  border-radius: var(--radius);
+  background: var(--ink-deep);
+}
+
+.timeline-grid h3,
+.fit-card h3,
+.path-card h3,
+.channel-card h3,
+.address-box h3 {
+  color: var(--clay);
+}
+
+.catalog-proof span,
+.partner-proof span,
+.order-proof span,
+.contact-proof span {
+  border: 1px solid rgba(31, 107, 85, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: 0 10px 28px rgba(46, 39, 36, 0.06);
+}
+
+footer {
+  background: var(--ink-deep);
+  color: rgba(255, 253, 248, 0.78);
+}
+
+@media (max-width: 1180px) {
+  .story-copy h1,
+  .catalog-copy h1,
+  .mitra-copy h1,
+  .order-copy h1,
+  .kontak-copy h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .story-header,
+  .catalog-header,
+  .mitra-header,
+  .order-header,
+  .kontak-header {
+    position: static;
+    width: auto;
+    margin: 10px;
+    flex-wrap: wrap;
+    border-radius: var(--radius);
+  }
+
+  .story-header nav,
+  .catalog-header nav,
+  .mitra-header nav,
+  .order-header nav,
+  .kontak-header nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding-top: 4px;
+  }
+
+  .nav-cta {
+    margin-left: auto;
+  }
+
+  .story-hero,
+  .catalog-hero,
+  .mitra-hero,
+  .order-hero,
+  .kontak-hero {
+    min-height: auto;
+    padding-top: 42px;
+    padding-bottom: 54px;
+  }
+
+  .story-copy h1,
+  .catalog-copy h1,
+  .mitra-copy h1,
+  .order-copy h1,
+  .kontak-copy h1 {
+    font-size: 3rem;
+    line-height: 0.96;
+  }
+
+  .timeline-section h2,
+  .process-copy h2,
+  .exposure-card h2,
+  .catalog-intro h2,
+  .section-head h2,
+  .flow-copy h2,
+  .trust-card h2,
+  .channel-copy h2,
+  .note-card h2,
+  .address-copy h2,
+  .final-card h2 {
+    font-size: 2.35rem;
+    line-height: 1;
+  }
+
+  .story-copy p,
+  .catalog-copy p,
+  .mitra-copy p,
+  .order-copy p,
+  .kontak-copy p {
+    font-size: 1rem;
+  }
+
+  .actions,
+  .hero-actions {
+    display: grid;
+    gap: 10px;
+  }
+
+  .actions .btn,
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .heritage-panel,
+  .catalog-showcase,
+  .mitra-visual,
+  .order-visual,
+  .kontak-visual {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
