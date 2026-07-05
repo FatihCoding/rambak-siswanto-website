@@ -334,7 +334,7 @@ body {
 .channel-icon,
 .process-list b,
 .flow-list b,
-.channel-list b,
+channel-list b,
 .address-list b {
   border-radius: var(--radius);
   background: var(--ink-deep);
@@ -463,6 +463,12 @@ footer {
   .kontak-visual {
     padding: 16px;
   }
+
+  .reveal,
+  .reveal.left,
+  .reveal.right {
+    transform: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -473,5 +479,12 @@ footer {
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
+  }
+
+  .reveal,
+  .reveal.left,
+  .reveal.right {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
