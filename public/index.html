@@ -16,9 +16,10 @@
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2317100c'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' font-family='Arial' font-weight='800' fill='%23fff7ea'%3ERS%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232e2724'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='22' font-family='Arial' font-weight='800' fill='%23faf6f0'%3ERS%3C/text%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="screenshot.css" />
+    <script src="site.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Lewati ke konten utama</a>
@@ -31,7 +32,7 @@
           <small>Kartasura, Sukoharjo</small>
         </span>
       </a>
-      <nav class="rs-nav">
+      <nav class="rs-nav" aria-label="Menu utama">
         <a href="profil.html">Cerita</a>
         <a href="produk.html">Produk</a>
         <a href="mitra.html">Mitra</a>
@@ -43,75 +44,64 @@
 
     <main id="main">
       <section class="hero" id="beranda" aria-labelledby="hero-title">
-        <div class="hero-copy">
+        <div class="hero-copy" data-reveal>
           <p class="eyebrow">Rambak kulit asli dari Kartasura</p>
           <h1 id="hero-title">Rasa lokal yang siap bergerak lebih jauh.</h1>
           <p class="lead">
-            Rambak Siswanto menghadirkan rambak kulit sapi dengan identitas lokal yang kuat,
-            kanal pembelian yang jelas, dan jalur komunikasi langsung untuk pelanggan,
-            reseller, event, dan mitra.
+            Etalase resmi Rambak Siswanto untuk mengenal produk, memilih kanal pembelian,
+            dan membuka komunikasi reseller atau pesanan besar dengan lebih rapi.
           </p>
           <div class="hero-actions" aria-label="Aksi utama">
-            <a class="btn primary" href="https://shopee.co.id/siswantogroup" target="_blank" rel="noopener">Beli di Shopee</a>
-            <a class="btn secondary" href="produk.html">Lihat Katalog</a>
-            <a class="btn ghost" href="cara-pesan.html">Cara Pesan</a>
+            <a class="btn primary" href="#produk">Lihat Katalog</a>
+            <a class="text-link" href="cara-pesan.html">Cara Pesan <span aria-hidden="true">&rarr;</span></a>
           </div>
-          <ul class="badge-row" aria-label="Ringkasan kepercayaan">
-            <li>Kartasura</li>
-            <li>Marketplace resmi</li>
-            <li>WhatsApp owner</li>
-          </ul>
         </div>
 
-        <div class="hero-visual" aria-label="Ilustrasi produk Rambak Siswanto">
-          <div class="hero-card">
-            <div class="seal">Heritage Brand</div>
-            <div class="pack-scene" aria-hidden="true">
-              <div class="pack pack-side">
-                <span>200g</span>
-                <b>RAMBAK</b>
-              </div>
-              <div class="pack pack-main">
-                <span>Kulit Sapi</span>
-                <b>SISWANTO</b>
-                <small>Kartasura</small>
-              </div>
-              <div class="pack pack-side">
-                <span>500g</span>
-                <b>KRECEK</b>
-              </div>
+        <div class="hero-visual" aria-label="Ilustrasi produk Rambak Siswanto" data-reveal>
+          <div class="product-stage">
+            <div class="stage-label">
+              <span>Sejak Kartasura</span>
+              <strong>SISWANTO</strong>
             </div>
-            <div class="channel-strip">
-              <span>Shopee</span>
-              <span>Tokopedia</span>
-              <span>WhatsApp</span>
+            <div class="serving-plate" aria-hidden="true">
+              <span class="crisp crisp-a"></span>
+              <span class="crisp crisp-b"></span>
+              <span class="crisp crisp-c"></span>
+              <span class="crisp crisp-d"></span>
+              <span class="crisp crisp-e"></span>
+              <span class="crisp crisp-f"></span>
+            </div>
+            <div class="pack-card" aria-hidden="true">
+              <span>200g</span>
+              <b>Rambak Kulit Sapi</b>
+              <small>Kanal resmi marketplace</small>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section intro" aria-labelledby="intro-title">
-        <p class="section-kicker">Company Profile</p>
-        <div class="intro-grid">
-          <h2 id="intro-title">Etalase digital untuk cerita, produk, dan kanal resmi.</h2>
-          <p>
-            Website ini mendukung external exposure Rambak Siswanto tanpa mengubahnya menjadi
-            e-commerce penuh. Pengunjung bisa mengenal cerita usaha, melihat produk unggulan,
-            memilih kanal pembelian resmi, dan membuka komunikasi mitra lewat WhatsApp owner.
-          </p>
+      <section class="trust-strip" aria-label="Ringkasan kepercayaan">
+        <div class="trust-inner">
+          <span>Kartasura</span>
+          <span>Marketplace resmi</span>
+          <span>WhatsApp owner</span>
+          <span>Retail dan mitra</span>
         </div>
       </section>
 
       <section class="section product-section" id="produk" aria-labelledby="produk-title">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="section-kicker">Produk unggulan</p>
-          <h2 id="produk-title">Pilihan produk untuk retail, rumah tangga, dan mitra.</h2>
-          <p>Harga, stok, dan varian mengikuti kanal marketplace atau konfirmasi langsung via WhatsApp.</p>
+          <h2 id="produk-title">Pilih produk utama tanpa perlu menebak kanal belinya.</h2>
+          <p>Harga, stok, dan varian mengikuti marketplace atau konfirmasi langsung via WhatsApp.</p>
         </div>
 
         <div class="product-grid">
-          <article class="product-card">
-            <div class="product-art rambak" aria-hidden="true"><span>200g</span></div>
+          <article class="product-card" data-reveal>
+            <div class="product-media rambak" aria-hidden="true">
+              <span class="tag">200g</span>
+              <div class="mini-pack"><b>RAMBAK</b></div>
+            </div>
             <p class="card-label">Produk utama</p>
             <h3>Rambak Kulit Sapi</h3>
             <p>Karakter renyah untuk camilan, oleh-oleh, dan pelengkap makan.</p>
@@ -121,19 +111,25 @@
             </div>
           </article>
 
-          <article class="product-card">
-            <div class="product-art krecek" aria-hidden="true"><span>Sayur</span></div>
+          <article class="product-card" data-reveal>
+            <div class="product-media krecek" aria-hidden="true">
+              <span class="tag">Sayur</span>
+              <div class="mini-pack"><b>KRECEK</b></div>
+            </div>
             <p class="card-label">Untuk masak</p>
             <h3>Krecek / Rambak Sayur</h3>
-            <p>Produk berbasis kulit untuk kebutuhan masak dan pelanggan yang mencari rasa khas.</p>
+            <p>Produk berbasis kulit untuk kebutuhan masak dan rasa khas rumahan.</p>
             <div class="card-actions">
               <a href="https://shopee.co.id/Kerupuk-Kulit-Sayur-Krecek-Asli-SISWANTO-500-g-i.52317900.29955453610" target="_blank" rel="noopener">Shopee</a>
               <a href="https://www.tokopedia.com/rambak-kulit-siswanto/1-ball-krecek-rambak-sayur-sapi-asli-siswanto-250-gram-krupuk-snack-cemilan-halal-1731014836359497629" target="_blank" rel="noopener">Tokopedia</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <div class="product-art kerupuk" aria-hidden="true"><span>500g</span></div>
+          <article class="product-card" data-reveal>
+            <div class="product-media kerupuk" aria-hidden="true">
+              <span class="tag">500g</span>
+              <div class="mini-pack"><b>TAHU</b></div>
+            </div>
             <p class="card-label">Varian kerupuk</p>
             <h3>Kerupuk Tahu / Kotak</h3>
             <p>Varian kerupuk untuk pembeli retail, reseller kecil, dan kebutuhan stok.</p>
@@ -142,100 +138,115 @@
               <a href="https://www.tokopedia.com/rambak-kulit-siswanto/kerupuk-tahu-kotak-asli-siswanto-500-gram-original-krupuk-tahu-goreng-snack-halal-1730813632296290205" target="_blank" rel="noopener">Tokopedia</a>
             </div>
           </article>
+        </div>
 
-          <article class="product-card dark-card">
-            <div class="product-art paket" aria-hidden="true"><span>Mitra</span></div>
-            <p class="card-label">Pesanan besar</p>
-            <h3>Paket Reseller / Event</h3>
-            <p>Untuk reseller, toko, event, dan kebutuhan jumlah besar yang perlu konfirmasi langsung.</p>
-            <div class="card-actions">
-              <a href="https://wa.me/6281229871936" target="_blank" rel="noopener">WhatsApp</a>
-              <a href="mitra.html">Lihat alur</a>
-            </div>
-          </article>
+        <div class="reseller-strip" data-reveal>
+          <div>
+            <p class="section-kicker">Pesanan besar</p>
+            <h3>Butuh untuk reseller, toko, rumah makan, atau event?</h3>
+            <p>Siapkan jenis produk, perkiraan jumlah, tanggal, dan lokasi agar percakapan lebih cepat.</p>
+          </div>
+          <a class="btn secondary" href="mitra.html">Lihat Alur Mitra</a>
+        </div>
+      </section>
+
+      <section class="section story-section" id="cerita" aria-labelledby="cerita-title">
+        <div class="story-copy" data-reveal>
+          <p class="section-kicker">Cerita & kredibilitas</p>
+          <h2 id="cerita-title">Dari Gumpang, Kartasura, dibawa ke kanal digital yang lebih tertata.</h2>
+          <p>
+            Rambak Siswanto dikelola oleh Pak Iwan Siswanto di Dusun III Gumpang,
+            Kartasura, Sukoharjo. Website ini merapikan cerita, produk, dan kanal resmi
+            agar pembeli retail maupun mitra bisa mengambil langkah dengan jelas.
+          </p>
+        </div>
+        <div class="story-visual" aria-label="Ringkasan identitas usaha" data-reveal>
+          <div class="story-card">
+            <span>Pusat usaha</span>
+            <strong>Dusun III Gumpang</strong>
+            <small>Kartasura, Sukoharjo 57169</small>
+          </div>
+          <div class="story-card muted-card">
+            <span>Kanal resmi</span>
+            <strong>Shopee, Tokopedia, WhatsApp</strong>
+            <small>Website sebagai etalase, bukan checkout penuh.</small>
+          </div>
         </div>
       </section>
 
       <section class="section process-section" id="proses" aria-labelledby="proses-title">
-        <div class="process-copy">
-          <p class="section-kicker">Proses & Kredibilitas</p>
-          <h2 id="proses-title">Kepercayaan dibangun dari informasi yang cepat dipahami.</h2>
-          <p>
-            Pengunjung tidak perlu menebak. Website langsung menjelaskan produk, kanal beli,
-            kebutuhan mitra, dan cara menghubungi Rambak Siswanto.
-          </p>
+        <div class="section-head narrow" data-reveal>
+          <p class="section-kicker">Proses</p>
+          <h2 id="proses-title">Tiga langkah supaya pengunjung cepat paham.</h2>
         </div>
         <div class="process-list">
-          <article>
+          <article data-reveal>
             <span>01</span>
             <h3>Kenali produk</h3>
-            <p>Produk utama dan varian penting tampil sebagai kartu yang mudah dipindai.</p>
+            <p>Produk utama dan varian penting tampil dalam kartu yang konsisten.</p>
           </article>
-          <article>
+          <article data-reveal>
             <span>02</span>
             <h3>Pilih kanal</h3>
-            <p>Pembelian retail diarahkan ke marketplace, diskusi besar langsung ke WhatsApp.</p>
+            <p>Retail diarahkan ke marketplace, kebutuhan besar masuk ke alur mitra.</p>
           </article>
-          <article>
+          <article data-reveal>
             <span>03</span>
-            <h3>Konfirmasi kebutuhan</h3>
-            <p>Reseller, toko, rumah makan, dan event bisa mulai dari pesan singkat yang jelas.</p>
+            <h3>Konfirmasi</h3>
+            <p>WhatsApp dipakai untuk stok, jumlah, tanggal, lokasi, dan kebutuhan khusus.</p>
           </article>
         </div>
       </section>
 
       <section class="section partner-section" id="mitra" aria-labelledby="mitra-title">
-        <div class="partner-panel">
-          <p class="section-kicker">Mitra & Reseller</p>
-          <h2 id="mitra-title">Untuk kebutuhan lebih besar, mulai dari percakapan yang rapi.</h2>
+        <div class="partner-panel" data-reveal>
+          <p class="section-kicker">Mitra & reseller</p>
+          <h2 id="mitra-title">Mulai dari pesan yang rapi, bukan tebak-tebakan.</h2>
           <p>
-            Gunakan WhatsApp untuk menjelaskan jenis kebutuhan, estimasi jumlah, tanggal,
-            dan lokasi. Rambak Siswanto dapat merespons sesuai ketersediaan dan kanal yang tepat.
+            Untuk kebutuhan lebih besar, gunakan WhatsApp dan tulis varian produk, estimasi jumlah,
+            tanggal kebutuhan, dan lokasi. Tim Rambak Siswanto bisa merespons sesuai ketersediaan.
           </p>
-          <a class="btn primary" href="https://wa.me/6281229871936?text=Halo%20Rambak%20Siswanto%2C%20saya%20ingin%20bertanya%20untuk%20kebutuhan%20reseller%20atau%20pemesanan%20besar." target="_blank" rel="noopener">Mulai via WhatsApp</a>
-          <a class="btn ghost" href="mitra.html">Buka Halaman Mitra</a>
+          <a class="btn whatsapp" href="https://wa.me/6281229871936?text=Halo%20Rambak%20Siswanto%2C%20saya%20ingin%20bertanya%20untuk%20kebutuhan%20reseller%20atau%20pemesanan%20besar." target="_blank" rel="noopener">Mulai via WhatsApp</a>
         </div>
-        <div class="partner-notes" aria-label="Kebutuhan yang cocok dibahas via WhatsApp">
-          <div><strong>Reseller</strong><span>Diskusi pembelian rutin atau penjualan ulang.</span></div>
+        <div class="partner-notes" aria-label="Kebutuhan yang cocok dibahas via WhatsApp" data-reveal>
+          <div><strong>Reseller</strong><span>Pembelian rutin atau penjualan ulang.</span></div>
           <div><strong>Event</strong><span>Kebutuhan camilan atau oleh-oleh dalam jumlah tertentu.</span></div>
           <div><strong>Toko / rumah makan</strong><span>Konfirmasi stok, varian, dan pola pembelian.</span></div>
         </div>
       </section>
 
       <section class="section faq-section" id="faq" aria-labelledby="faq-title">
-        <div class="section-head narrow">
+        <div class="section-head narrow" data-reveal>
           <p class="section-kicker">FAQ</p>
           <h2 id="faq-title">Pertanyaan cepat sebelum menghubungi.</h2>
         </div>
         <div class="faq-list">
-          <details>
+          <details data-reveal>
             <summary>Di mana bisa membeli produk Rambak Siswanto?</summary>
             <p>Pembelian retail diarahkan ke Shopee dan Tokopedia. Untuk jumlah besar, gunakan WhatsApp.</p>
           </details>
-          <details>
+          <details data-reveal>
             <summary>Apakah website ini menerima checkout langsung?</summary>
             <p>Tidak. Website ini berfungsi sebagai etalase dan pengarah kanal resmi, sehingga transaksi tetap melalui marketplace atau WhatsApp.</p>
           </details>
-          <details>
+          <details data-reveal>
             <summary>Bagaimana cara tanya stok atau kebutuhan event?</summary>
             <p>Klik tombol WhatsApp, lalu tulis kebutuhan, perkiraan jumlah, tanggal, dan lokasi pengiriman.</p>
           </details>
         </div>
       </section>
 
-      <section class="final-cta" id="kontak" aria-labelledby="kontak-title">
+      <section class="final-cta" id="kontak" aria-labelledby="kontak-title" data-reveal>
         <p class="section-kicker">Kontak</p>
-        <h2 id="kontak-title">Siap lihat produk atau mulai diskusi?</h2>
-        <div class="final-actions">
-          <a class="btn primary" href="https://shopee.co.id/siswantogroup" target="_blank" rel="noopener">Buka Shopee</a>
-          <a class="btn secondary" href="produk.html">Lihat Produk</a>
-          <a class="btn ghost" href="kontak.html">Kontak Resmi</a>
-        </div>
+        <h2 id="kontak-title">Butuh alamat, nomor, dan kanal resmi?</h2>
+        <a class="btn secondary" href="kontak.html">Buka Kontak Resmi</a>
       </section>
     </main>
 
+    <a class="wa-fab" href="https://wa.me/6281229871936" target="_blank" rel="noopener" aria-label="Hubungi Rambak Siswanto via WhatsApp">WA</a>
+
     <footer class="rs-footer">
-      <span>Rambak Siswanto • Kartasura • Sukoharjo</span>
+      <span>Rambak Siswanto &bull; Kartasura &bull; Sukoharjo</span>
       <span>Etalase digital untuk produk, mitra, dan kanal pemesanan resmi.</span>
     </footer>
   </body>
