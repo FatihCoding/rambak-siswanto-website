@@ -9,6 +9,14 @@ Website profil usaha dan katalog ringan untuk Rambak Siswanto. Pembelian retail 
 - Folder `public/` adalah satu-satunya source of truth untuk produksi. File HTML/CSS/JS lama di root repository adalah arsip dan tidak ikut terdeploy.
 - Harga, stok, promo, pembayaran, alamat pelanggan, dan status pemenuhan tetap dikelola di marketplace atau WhatsApp, bukan di website.
 
+## Visual stakeholder demo
+
+- Visual sementara disimpan terpisah di `public/images/concept/` dan tidak boleh diperlakukan sebagai dokumentasi usaha.
+- Path, teks alternatif, dan `imageStatus` dikelola dari `public/business-content.js`.
+- `public/visuals.js` menampilkan label konsep secara otomatis dan menghapusnya ketika status berubah menjadi `verified`.
+- Daftar foto autentik yang harus disediakan terdapat di [`CONTENT_REQUIREMENTS.md`](CONTENT_REQUIREMENTS.md).
+- Visual konsep tidak digunakan sebagai structured data, sertifikat, testimoni, atau bukti kapasitas operasional.
+
 ## Rute publik
 
 - `/` - beranda dan ringkasan produk
