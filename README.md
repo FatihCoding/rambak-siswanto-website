@@ -2,20 +2,24 @@
 
 Website profil usaha dan katalog ringan untuk Rambak Siswanto. Pembelian retail diarahkan ke marketplace; pertanyaan produk dan kebutuhan besar diarahkan ke WhatsApp dengan pesan yang dapat diedit.
 
-## Arsitektur
+## Source of truth dan deployment
 
 - Situs statis: HTML, CSS, dan JavaScript browser tanpa framework atau database.
-- Cloudflare Workers Static Assets menyajikan isi folder `public/`.
-- Folder `public/` adalah satu-satunya source of truth untuk produksi. File HTML/CSS/JS lama di root repository adalah arsip dan tidak ikut terdeploy.
+- Cloudflare Workers Static Assets menyajikan isi folder `public/`, sesuai `wrangler.jsonc`.
+- Branch produksi adalah `main`. Branch pull request mendapat preview Cloudflare terpisah.
+- Folder `public/` adalah satu-satunya source of truth untuk situs Cloudflare.
+- File HTML/CSS/JS lama di root repository adalah implementasi lama. Entry point HTML lama mengarahkan pengunjung ke situs Cloudflare dan tidak boleh diedit sebagai halaman aktif.
 - Harga, stok, promo, pembayaran, alamat pelanggan, dan status pemenuhan tetap dikelola di marketplace atau WhatsApp, bukan di website.
 
-## Visual stakeholder demo
+## Visual dan konten
 
-- Visual sementara disimpan terpisah di `public/images/concept/` dan tidak boleh diperlakukan sebagai dokumentasi usaha.
-- Path, teks alternatif, dan `imageStatus` dikelola dari `public/business-content.js`.
-- `public/visuals.js` menampilkan label konsep secara otomatis dan menghapusnya ketika status berubah menjadi `verified`.
-- Daftar foto autentik yang harus disediakan terdapat di [`CONTENT_REQUIREMENTS.md`](CONTENT_REQUIREMENTS.md).
-- Visual konsep tidak digunakan sebagai structured data, sertifikat, testimoni, atau bukti kapasitas operasional.
+- Belum ada foto usaha autentik yang disetujui di repository.
+- Situs memakai panel tipografi netral agar tidak menyamarkan ilustrasi sebagai produk atau kemasan asli.
+- Kebutuhan foto, ukuran, dan penempatan tercatat di [`PHOTO_ASSET_REQUIREMENTS.md`](PHOTO_ASSET_REQUIREMENTS.md).
+- Foto baru hanya boleh masuk ke `public/images/verified/` setelah asal, isi gambar, dan izin publikasinya dikonfirmasi pemilik.
+- Jangan memakai foto generatif, mockup kemasan, sertifikat, testimoni, atau visual proses sebagai bukti usaha.
+
+Konten utama diperbarui langsung di file HTML terkait. Gaya bersama berada di `public/brand.css`, perilaku navigasi dan animasi ringan di `public/site.js`, sedangkan pencarian katalog berada di `public/catalog.js`.
 
 ## Rute publik
 
@@ -39,6 +43,14 @@ npx wrangler dev
 
 Jangan menjalankan `wrangler deploy` sebelum preview diperiksa dan pemilik menyetujui perubahan produksi.
 
+Jalankan pemeriksaan statis tanpa dependency:
+
+```powershell
+node scripts/verify-site.mjs
+node --check public/site.js
+node --check public/catalog.js
+```
+
 ## Pemeriksaan sebelum rilis
 
 1. Buka seluruh rute pada lebar 360, 390, 768, 1024, dan 1440 px.
@@ -52,11 +64,12 @@ Jangan menjalankan `wrangler deploy` sebelum preview diperiksa dan pemilik menye
 
 Website tidak boleh menebak informasi usaha. Sebelum promosi aktif, pemilik perlu menyediakan atau mengonfirmasi:
 
-- foto asli setiap produk dan kemasan;
+- foto asli produk, kemasan, dan konteks usaha sesuai `PHOTO_ASSET_REQUIREMENTS.md`;
 - komposisi, masa simpan, dan petunjuk penyimpanan;
 - sertifikasi atau izin yang boleh dipublikasikan;
 - minimum order, waktu pemenuhan, dan aturan kemitraan;
-- apakah alamat menerima kunjungan dan boleh diberi tautan petunjuk arah;
+- alamat lengkap yang boleh dipublikasikan, titik Google Maps, dan apakah kunjungan diperbolehkan;
 - persetujuan penggunaan nomor WhatsApp dan alamat sebagai data kontak publik.
 
 Jangan menambahkan testimoni, rating, sertifikasi, klaim kualitas, harga, atau stok tanpa sumber yang dapat diverifikasi.
+
