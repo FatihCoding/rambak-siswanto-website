@@ -429,11 +429,6 @@ header .mobile-nav {
   border-radius: 6px;
 }
 
-.filter-btn.active {
-  background: transparent;
-  color: inherit;
-}
-
 .filter-btn[aria-pressed="true"] {
   border-color: var(--brand-red);
   background: var(--brand-red);
@@ -450,6 +445,15 @@ header .mobile-nav {
 footer {
   background: var(--brand-ink);
   color: rgba(255, 250, 243, 0.82);
+}
+
+.rs-footer a,
+footer a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
 }
 
 @media (max-width: 900px) {
