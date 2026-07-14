@@ -4,23 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#17110f" />
+    <meta name="theme-color" content="#a51d24" />
     <title>Halaman Tidak Ditemukan | Rambak Siswanto</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="/assets/fonts/instrument-serif-regular-latin-v5.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/fonts.css" />
     <link rel="stylesheet" href="/subpage.css" />
+    <link rel="stylesheet" href="/brand.css" />
+    <script defer src="/site.js"></script>
   </head>
   <body class="utility-page">
     <a class="skip-link" href="#main">Lewati ke konten utama</a>
     <header class="story-header" aria-label="Navigasi utama">
-      <a class="story-brand" href="/" aria-label="Rambak Siswanto, beranda"><span class="story-mark" aria-hidden="true">RS</span><span>Rambak Siswanto</span></a>
-      <nav class="desktop-nav" aria-label="Menu utama"><a href="/">Beranda</a><a href="/profil">Cerita</a><a href="/produk">Produk</a><a href="/mitra">Mitra</a><a href="/cara-pesan">Cara Pesan</a><a href="/kontak">Kontak</a></nav>
-      <details class="nav-menu">
-        <summary aria-label="Buka menu utama" title="Buka menu"><svg class="menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg></summary>
-        <nav class="mobile-nav" aria-label="Menu utama seluler"><a href="/">Beranda</a><a href="/profil">Cerita</a><a href="/produk">Produk</a><a href="/mitra">Mitra</a><a href="/cara-pesan">Cara Pesan</a><a href="/kontak">Kontak</a></nav>
-      </details>
+      <a class="story-brand" href="/" aria-label="Rambak Siswanto, beranda"><span class="brand-wordmark"><strong>Rambak Siswanto</strong><small>Kartasura</small></span></a>
+      <nav class="desktop-nav" aria-label="Menu utama"><a href="/">Beranda</a><a href="/produk">Produk</a><a href="/profil">Cerita</a><a href="/mitra">Mitra</a><a href="/kontak">Kontak</a></nav>
       <a class="nav-cta" href="https://wa.me/6281229871936?text=Halo%20Rambak%20Siswanto%2C%20saya%20ingin%20bertanya%20tentang%20produk.%0A%0AProduk%20yang%20ditanyakan%3A%20%0AJumlah%3A%20%0AKota%20tujuan%3A%20" target="_blank" rel="noopener" aria-label="Hubungi Rambak Siswanto via WhatsApp">WhatsApp</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-not-found" aria-label="Buka menu utama">
+        <svg class="menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+      <nav id="mobile-nav-not-found" class="mobile-nav" aria-label="Menu utama seluler"><a href="/">Beranda</a><a href="/produk">Produk</a><a href="/profil">Cerita</a><a href="/mitra">Mitra</a><a href="/kontak">Kontak</a></nav>
     </header>
 
     <main id="main" class="utility-main" tabindex="-1">
@@ -35,3 +37,4 @@
     <footer><span>Rambak Siswanto &bull; Kartasura &bull; Sukoharjo</span><span>Gunakan menu untuk kembali ke halaman yang tersedia.</span><a href="/privasi">Kebijakan Privasi</a></footer>
   </body>
 </html>
+
