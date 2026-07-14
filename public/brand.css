@@ -35,6 +35,12 @@ body * {
   letter-spacing: 0;
 }
 
+html:not(.js) [data-reveal],
+html:not(.js) .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 :focus-visible {
   outline: 3px solid var(--brand-red);
   outline-offset: 3px;
@@ -292,6 +298,24 @@ header .mobile-nav {
   color: var(--brand-ink);
 }
 
+body h1 {
+  font-size: 4.75rem !important;
+  line-height: 0.94;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+body h2 {
+  font-size: 3.25rem !important;
+  line-height: 1;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.utility-panel h1 {
+  font-size: 3.5rem !important;
+}
+
 .neutral-stage {
   position: relative;
   display: grid;
@@ -457,6 +481,14 @@ footer a {
 }
 
 @media (max-width: 900px) {
+  body h1 {
+    font-size: 3.2rem !important;
+  }
+
+  body h2 {
+    font-size: 2.4rem !important;
+  }
+
   .rs-header,
   .story-header,
   .catalog-header,
@@ -565,6 +597,14 @@ footer a {
 }
 
 @media (max-width: 420px) {
+  body h1 {
+    font-size: 2.7rem !important;
+  }
+
+  body h2 {
+    font-size: 2.1rem !important;
+  }
+
   .brand-wordmark strong {
     font-size: 0.88rem;
   }
