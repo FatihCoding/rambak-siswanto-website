@@ -8,7 +8,7 @@ Website profil usaha dan katalog ringan untuk Rambak Siswanto. Pembelian retail 
 - Cloudflare Workers Static Assets menyajikan isi folder `public/`, sesuai `wrangler.jsonc`.
 - Branch produksi adalah `main`. Branch pull request mendapat preview Cloudflare terpisah.
 - Folder `public/` adalah satu-satunya source of truth untuk situs Cloudflare.
-- File HTML/CSS/JS lama di root repository adalah implementasi lama. Entry point HTML lama mengarahkan pengunjung ke situs Cloudflare dan tidak boleh diedit sebagai halaman aktif.
+- Entry point HTML di root repository hanya berfungsi sebagai pengalihan untuk GitHub Pages lama. Halaman aktif tetap berada di `public/`.
 - Harga, stok, promo, pembayaran, alamat pelanggan, dan status pemenuhan tetap dikelola di marketplace atau WhatsApp, bukan di website.
 
 ## Visual dan konten
@@ -28,7 +28,7 @@ Konten utama diperbarui langsung di file HTML terkait. Gaya bersama berada di `p
 - `/produk` - katalog serta filter produk
 - `/mitra` - kebutuhan reseller dan pesanan besar
 - `/cara-pesan` - pilihan kanal pemesanan
-- `/kontak` - kontak, marketplace, dan alamat usaha
+- `/kontak` - WhatsApp dan marketplace
 - `/privasi` - praktik privasi website
 
 URL internal menggunakan bentuk tanpa `.html`. Cloudflare tetap menangani URL lama dan menyediakan halaman 404 yang bisa dipakai untuk kembali ke situs.

@@ -137,8 +137,18 @@ for (const fileName of htmlFiles.filter((name) => name !== "404.html")) {
 }
 
 const phoneNumbers = new Set();
-for (const html of pages.values()) {
-  for (const match of html.matchAll(/wa\.me\/(\d+)/g)) phoneNumbers.add(match[1]);
+for (const [fileName, html] of pages) {
+  for (const match of html.matchAll(/href=["'](https:\/\/wa\.me\/\d+\?[^"']+)["']/g)) {
+    const whatsappUrl = new URL(match[1].replaceAll("&amp;", "&"));
+    phoneNumbers.add(whatsappUrl.pathname.slice(1));
+    const message = whatsappUrl.searchParams.get("text") || "";
+    report(message.trim().length > 0, `${fileName}: WhatsApp link is missing a prefilled message`);
+    if (fileName === "mitra.html") {
+      for (const field of ["nama/usaha:", "kebutuhan:", "produk:", "perkiraan jumlah:", "tanggal dibutuhkan:", "kota tujuan:"]) {
+        report(message.toLocaleLowerCase("id-ID").includes(field), `${fileName}: partnership message is missing "${field}"`);
+      }
+    }
+  }
 }
 report(phoneNumbers.size === 1, `WhatsApp links use inconsistent numbers: ${[...phoneNumbers].join(", ")}`);
 
@@ -147,6 +157,16 @@ report((catalog.match(/<article\s+class=["']product-card["']/g) || []).length > 
 report(/id=["']catalog-status["'][^>]*aria-live=["']polite["']/i.test(catalog), "produk.html: missing live catalogue status");
 for (const button of catalog.match(/<button\b[^>]*class=["'][^"']*filter-btn[^"']*["'][^>]*>/gi) || []) {
   report(/aria-pressed=["'](?:true|false)["']/i.test(button), "produk.html: filter button missing aria-pressed");
+}
+for (const match of catalog.matchAll(/<article\s+class=["']product-card["'][^>]*>([\s\S]*?)<\/article>/gi)) {
+  const card = match[1];
+  const productName = card.match(/<h3>([^<]+)<\/h3>/i)?.[1]?.trim();
+  const whatsappHref = card.match(/href=["'](https:\/\/wa\.me\/\d+\?[^"']+)["']/i)?.[1];
+  report(Boolean(productName && whatsappHref), "produk.html: every product card needs a title and WhatsApp action");
+  if (productName && whatsappHref) {
+    const message = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text") || "";
+    report(message.toLocaleLowerCase("id-ID").includes(productName.toLocaleLowerCase("id-ID")), `produk.html: WhatsApp message does not name ${productName}`);
+  }
 }
 
 if (errors.length) {
