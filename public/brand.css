@@ -560,6 +560,11 @@ footer a {
     padding: 0 12px;
   }
 
+  .rs-footer a + a,
+  footer a + a {
+    margin-left: 16px;
+  }
+
   .hero,
   .story-hero,
   .catalog-hero,
