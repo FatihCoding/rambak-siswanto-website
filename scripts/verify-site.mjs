@@ -48,6 +48,12 @@ for (const [fileName, html] of pages) {
     report(/\brel=["'][^"']*\bnoopener\b[^"']*["']/i.test(anchor), `${fileName}: target="_blank" link is missing rel="noopener"`);
   }
 
+  for (const image of html.match(/<img\b[^>]*>/gi) || []) {
+    report(/\balt=["'][^"']+["']/i.test(image), `${fileName}: image is missing meaningful alt text`);
+    report(/\bwidth=["']\d+["']/i.test(image), `${fileName}: image is missing a numeric width`);
+    report(/\bheight=["']\d+["']/i.test(image), `${fileName}: image is missing a numeric height`);
+  }
+
   if (indexable) {
     report(/<title>[^<]+<\/title>/i.test(html), `${fileName}: missing title`);
     report(/<meta\s+name=["']description["']\s+content=["'][^"']+["']/i.test(html), `${fileName}: missing meta description`);
@@ -105,7 +111,10 @@ for (const [fileName, html] of pages) {
     "partner ready",
     "heritage local",
     "menaikkan persepsi",
-    "homepage cukup"
+    "homepage cukup",
+    "toko resmi",
+    "marketplace resmi",
+    "gumpang"
   ];
   for (const phrase of bannedVisiblePhrases) {
     report(!visibleText.includes(phrase), `${fileName}: banned or unverified visible phrase "${phrase}"`);
@@ -144,8 +153,13 @@ for (const [fileName, html] of pages) {
     const message = whatsappUrl.searchParams.get("text") || "";
     report(message.trim().length > 0, `${fileName}: WhatsApp link is missing a prefilled message`);
     if (fileName === "mitra.html") {
-      for (const field of ["nama/usaha:", "kebutuhan:", "produk:", "perkiraan jumlah:", "tanggal dibutuhkan:", "kota tujuan:"]) {
-        report(message.toLocaleLowerCase("id-ID").includes(field), `${fileName}: partnership message is missing "${field}"`);
+      const normalizedMessage = message.toLocaleLowerCase("id-ID");
+      report(
+        normalizedMessage.includes("saya ingin berdiskusi mengenai kerja sama atau pemesanan jumlah besar."),
+        `${fileName}: partnership message is missing the approved opening`
+      );
+      for (const field of ["nama:", "nama usaha/organisasi:", "jenis kebutuhan:", "produk:", "perkiraan jumlah:", "lokasi:", "tanggal kebutuhan:"]) {
+        report(normalizedMessage.includes(field), `${fileName}: partnership message is missing "${field}"`);
       }
     }
   }
@@ -153,12 +167,14 @@ for (const [fileName, html] of pages) {
 report(phoneNumbers.size === 1, `WhatsApp links use inconsistent numbers: ${[...phoneNumbers].join(", ")}`);
 
 const catalog = pages.get("produk.html") || "";
-report((catalog.match(/<article\s+class=["']product-card["']/g) || []).length > 0, "produk.html: product cards must exist without JavaScript");
+const productCards = [...catalog.matchAll(/<article\s+class=["']product-card["'][^>]*>([\s\S]*?)<\/article>/gi)];
+report(productCards.length === 12, `produk.html: expected 12 product cards without JavaScript, found ${productCards.length}`);
+report(/<label\b[^>]*for=["']catalog-search["'][^>]*>[\s\S]*?<\/label>/i.test(catalog), "produk.html: catalogue search is missing an associated label");
 report(/id=["']catalog-status["'][^>]*aria-live=["']polite["']/i.test(catalog), "produk.html: missing live catalogue status");
 for (const button of catalog.match(/<button\b[^>]*class=["'][^"']*filter-btn[^"']*["'][^>]*>/gi) || []) {
   report(/aria-pressed=["'](?:true|false)["']/i.test(button), "produk.html: filter button missing aria-pressed");
 }
-for (const match of catalog.matchAll(/<article\s+class=["']product-card["'][^>]*>([\s\S]*?)<\/article>/gi)) {
+for (const match of productCards) {
   const card = match[1];
   const productName = card.match(/<h3>([^<]+)<\/h3>/i)?.[1]?.trim();
   const whatsappHref = card.match(/href=["'](https:\/\/wa\.me\/\d+\?[^"']+)["']/i)?.[1];
