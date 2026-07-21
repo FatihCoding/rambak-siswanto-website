@@ -546,7 +546,7 @@ footer a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .js header .mobile-nav:not([hidden]) {
+  .js.nav-ready header .mobile-nav:not([hidden]) {
     display: grid;
     grid-template-columns: 1fr;
   }

@@ -48,6 +48,11 @@ for (const [fileName, html] of pages) {
     report(/\brel=["'][^"']*\bnoopener\b[^"']*["']/i.test(anchor), `${fileName}: target="_blank" link is missing rel="noopener"`);
   }
 
+  report(
+    /<script\s+src=["']\/site\.js\?v=3["']><\/script>/i.test(html),
+    `${fileName}: site.js must initialize enhancement classes before first paint`
+  );
+
   for (const image of html.match(/<img\b[^>]*>/gi) || []) {
     report(/\balt=["'][^"']+["']/i.test(image), `${fileName}: image is missing meaningful alt text`);
     report(/\bwidth=["']\d+["']/i.test(image), `${fileName}: image is missing a numeric width`);
