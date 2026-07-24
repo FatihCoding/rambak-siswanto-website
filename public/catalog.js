@@ -1,26 +1,53 @@
-const WA='https://wa.me/6281229871936';
-const SHOPEE='https://shopee.co.id/siswantogroup';
-const TOKO='https://www.tokopedia.com/rambak-kulit-siswanto';
-const PRODUCTS=[
-{cat:'rambak',label:'Rambak',name:'Rambak Kulit Sapi 200g',pack:'200g',desc:'Produk utama Rambak Siswanto untuk camilan, oleh-oleh, dan pelengkap makan.',s:'https://shopee.co.id/Kerupuk-Rambak-Kulit-Sapi-Asli-Siswanto-200-Gram-Original-i.52317900.28903889605',t:TOKO,w:WA},
-{cat:'rambak',label:'Rambak',name:'Rambak Kulit Sapi 250g',pack:'250g',desc:'Ukuran praktis untuk pembelian online, stok rumah, dan kebutuhan pelanggan rutin.',s:'https://shopee.co.id/Kerupuk-Rambak-Kulit-Sapi-Asli-Siswanto-250-Gram-Original-i.52317900.24092180624',t:'https://www.tokopedia.com/rambak-kulit-siswanto/1-ball-kerupuk-rambak-kulit-sapi-asli-siswanto-250-gram-original-snack-cemilan-halal-1730876215565256605',w:WA},
-{cat:'rambak',label:'Rambak',name:'Rambak Kulit Sapi 500g',pack:'500g',desc:'Kemasan lebih besar untuk keluarga, toko, reseller, dan pemesanan berulang.',s:'https://shopee.co.id/Kerupuk-Rambak-Kulit-Sapi-Asli-Siswanto-500Gram-Original-i.52317900.26528314234',t:TOKO,w:WA},
-{cat:'rambak',label:'Rambak',name:'Rambak Mentah / Ungkepan 1kg',pack:'1kg',desc:'Rambak siap goreng untuk kebutuhan usaha, rumah makan, atau stok produksi kecil.',s:'https://shopee.co.id/RAMBAK-KULIT-SAPI-SISWANTO-MENTAH-UNGKEPAN-RAMBAK-1-KG-SIAP-GORENG-i.52317900.27759756166',t:'https://www.tokopedia.com/rambak-kulit-siswanto/rambak-kulit-sapi-siswanto-mentah-ungkepan-rambak-1-kg-siap-goreng-snacks-halal-food-1730792963852961693',w:WA},
-{cat:'rambak',label:'Rambak',name:'Krecek / Rambak Sayur',pack:'250g-500g',desc:'Produk berbasis kulit untuk kebutuhan masak dan pelanggan rumah tangga.',s:'https://shopee.co.id/Kerupuk-Kulit-Sayur-Krecek-Asli-SISWANTO-500-g-i.52317900.29955453610',t:'https://www.tokopedia.com/rambak-kulit-siswanto/1-ball-krecek-rambak-sayur-sapi-asli-siswanto-250-gram-krupuk-snack-cemilan-halal-1731014836359497629',w:WA},
-{cat:'kerupuk',label:'Kerupuk',name:'Kerupuk Tahu / Kotak 200g',pack:'200g',desc:'Varian kerupuk praktis yang memperluas pilihan produk Siswanto.',s:'https://shopee.co.id/Kerupuk-Kotak-Tahu-Asli-SISWANTO-200-Gram-i.52317900.25133553937',t:TOKO,w:WA},
-{cat:'kerupuk',label:'Kerupuk',name:'Kerupuk Tahu / Kotak 500g',pack:'500g',desc:'Produk kerupuk untuk pembeli retail, reseller, dan kebutuhan stok jualan.',s:'https://shopee.co.id/Kerupuk-Tahu-Kotak-Asli-Siswanto-500-Gram-Original-i.52317900.24492192096',t:'https://www.tokopedia.com/rambak-kulit-siswanto/kerupuk-tahu-kotak-asli-siswanto-500-gram-original-krupuk-tahu-goreng-snack-halal-1730813632296290205',w:WA},
-{cat:'kerupuk',label:'Kerupuk',name:'Kerupuk Tahu / Kotak 1kg',pack:'1kg',desc:'Kemasan besar untuk stok rumah, toko, reseller, dan pemesanan rutin.',s:'https://shopee.co.id/Kerupuk-Tahu-Kotak-Asli-Siswanto-1-Kg-Original-i.52317900.28078322033',t:'https://www.tokopedia.com/rambak-kulit-siswanto/1-ball-kerupuk-tahu-kotak-asli-siswanto-1-kg-original-krupuk-tahu-goreng-snack-cemilan-halal-1730940271299626909',w:WA},
-{cat:'kerupuk',label:'Kerupuk',name:'Kerupuk Ikan Tongkol 500g',pack:'500g',desc:'Varian kerupuk ikan untuk pilihan produk yang lebih luas di katalog Siswanto.',s:'https://shopee.co.id/Kerupuk-Ikan-Tongkol-Asli-Siswanto-500-Gram-Original-i.52317900.29928317208',t:'https://www.tokopedia.com/rambak-kulit-siswanto/kerupuk-ikan-tongkol-siswanto-500-gram-original-snack-halal-food-1730813633215432605',w:WA},
-{cat:'paket',label:'Paket',name:'Paket 5 pcs Rambak 70g',pack:'5 pcs',desc:'Paket kecil untuk oleh-oleh, event, hampers, dan kebutuhan keluarga.',s:'https://shopee.co.id/Paket-5-pcs-Kerupuk-Rambak-Kulit-Sapi-Asli-Siswanto-70Gram-Original-i.52317900.28028313783',t:'https://www.tokopedia.com/rambak-kulit-siswanto/paket-5pcs-kerupuk-rambak-kulit-sapi-asli-siswanto-70gram-original-snacks-1730943787136223133',w:WA},
-{cat:'paket',label:'Paket',name:'Paket 10 pcs Rambak 35g',pack:'10 pcs',desc:'Paket ukuran kecil untuk display toko, acara, dan pembelian kolektif.',s:'https://shopee.co.id/Paket-10-pcs-Kerupuk-Rambak-Kulit-Sapi-Asli-Siswanto-35Gram-Original-i.52317900.26228322600',t:'https://www.tokopedia.com/rambak-kulit-siswanto/paket-10pcs-kerupuk-rambak-kulit-sapi-asli-siswanto-35gram-original-snacks-cemilan-halal-1730943884607457181',w:WA},
-{cat:'lainnya',label:'Lainnya',name:'Bawang Goreng Premium',pack:'Botol',desc:'Produk pendamping dari Siswanto Food untuk kebutuhan rumah dan reseller.',s:'https://shopee.co.id/BAWANG-GORENG-ASLI-PREMIUM-by-SISWANTO-FOOD-i.52317900.29375616401',t:'https://www.tokopedia.com/rambak-kulit-siswanto/bawang-goreng-asli-premium-by-siswanto-food-1730847761098770333',w:WA}
-];
-const grid=document.getElementById('catalog-grid');
-const search=document.getElementById('catalog-search');
-const buttons=[...document.querySelectorAll('.filter-btn')];
-let active='semua';
-function card(p){return `<article class="product-card"><div class="product-visual ${p.cat}"><span>${p.pack}</span></div><div class="product-meta">${p.label}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="product-cta"><a href="${p.s}" target="_blank" rel="noopener">Shopee</a><a href="${p.t}" target="_blank" rel="noopener">Tokopedia</a><a href="${p.w}" target="_blank" rel="noopener">WhatsApp</a></div></article>`}
-function render(){const q=(search?.value||'').toLowerCase().trim();const list=PRODUCTS.filter(p=>(active==='semua'||p.cat===active)&&(p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.pack.toLowerCase().includes(q)||p.label.toLowerCase().includes(q)));grid.innerHTML=list.length?list.map(card).join(''):`<div class="catalog-empty">Produk tidak ditemukan. Coba kata kunci lain atau pilih kategori Semua.</div>`}
-buttons.forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.cat;buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');render()}));
-search?.addEventListener('input',render);
-render();
+(() => {
+  document.documentElement.classList.add("catalog-enhanced");
+
+  const initialize = () => {
+    const cards = Array.from(document.querySelectorAll("#catalog-grid .product-card"));
+    const search = document.getElementById("catalog-search");
+    const buttons = Array.from(document.querySelectorAll(".filter-btn"));
+    const empty = document.getElementById("catalog-empty");
+    const status = document.getElementById("catalog-status");
+    let activeCategory = "semua";
+    let searchTimer;
+
+    const normalize = (value) => value.toLocaleLowerCase("id-ID").trim();
+
+    const render = () => {
+      const query = normalize(search?.value || "");
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const categoryMatches = activeCategory === "semua" || card.dataset.cat === activeCategory;
+        const queryMatches = normalize(card.textContent || "").includes(query);
+        const visible = categoryMatches && queryMatches;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (empty) empty.hidden = visibleCount !== 0;
+      if (status) status.textContent = `${visibleCount} produk ditampilkan.`;
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeCategory = button.dataset.cat || "semua";
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        render();
+      });
+    });
+
+    search?.addEventListener("input", () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(render, 160);
+    });
+
+    render();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize, { once: true });
+  } else {
+    initialize();
+  }
+})();
+
