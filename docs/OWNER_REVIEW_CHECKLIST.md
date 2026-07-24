@@ -17,7 +17,8 @@ Petunjuk: beri tanda `[x]` pada satu pilihan untuk setiap baris, lalu tulis kore
 | Titik Google Maps | Belum ditampilkan | [ ] | [ ] | [ ] | |
 | Jam layanan | Belum ditampilkan | [ ] | [ ] | [ ] | |
 | Kebijakan kunjungan | Belum ditampilkan | [ ] | [ ] | [ ] | |
-| Nama pemilik atau kontak | Belum ditampilkan | [ ] | [ ] | [ ] | |
+| Nama pemilik atau kontak | Konflik ejaan: Iwan Saswianto / Iwan Siswanto; belum ditampilkan | [ ] | [ ] | [ ] | |
+| Izin publikasi nama pemilik | Belum diberikan per kategori | [ ] | [ ] | [ ] | |
 
 ## Produk dan Kanal Penjualan
 
@@ -51,7 +52,9 @@ Petunjuk: beri tanda `[x]` pada satu pilihan untuk setiap baris, lalu tulis kore
 | Foto proses atau packing | Belum tersedia | [ ] | [ ] | [ ] | |
 | Foto konteks usaha untuk Cerita atau Kontak | Belum tersedia | [ ] | [ ] | [ ] | |
 | Cerita asal usaha | Hanya menyebut Kartasura, tanpa tahun atau nama orang | [ ] | [ ] | [ ] | |
-| Izin publikasi aset Drive DA-004, 005, 014, 015, 016, 020, 021 | Belum ada | [ ] | [ ] | [ ] | |
+| Izin publikasi aset Drive DA-004, 005, 014, 015, 016, 020, 021 | Izin umum dinyatakan project lead; izin per aset belum terdaftar | [ ] | [ ] | [ ] | |
+| Foto yang dibuat project lead | Asset ID belum dipetakan | [ ] | [ ] | [ ] | |
+| Penyimpanan/transkripsi/kutipan rekaman | Belum diputuskan per penggunaan | [ ] | [ ] | [ ] | |
 
 ## Pesanan Besar dan Mitra
 
@@ -81,6 +84,9 @@ Petunjuk: beri tanda `[x]` pada satu pilihan untuk setiap baris, lalu tulis kore
 | Komposisi | Belum ditampilkan | [ ] | [ ] | [ ] | |
 | Masa simpan | Belum ditampilkan | [ ] | [ ] | [ ] | |
 | Cara penyimpanan | Belum ditampilkan | [ ] | [ ] | [ ] | |
+| Lingkup izin lisan yang pernah diberikan | Pemberi, tanggal, materi, kanal, dan batas belum dicatat | [ ] | [ ] | [ ] | |
+| Persetujuan publikasi produksi | Belum ada keputusan tertulis per kategori | [ ] | [ ] | [ ] | |
+| Pengelola koreksi website setelah serah terima | Belum ditetapkan | [ ] | [ ] | [ ] | |
 | Klaim harga, stok, dan promo | Hanya disebut mengikuti kanal tujuan | [ ] | [ ] | [ ] | |
 | Seluruh kalimat publik pada Beranda | Periksa langsung di preview | [ ] | [ ] | [ ] | |
 | Seluruh kalimat publik pada Produk | Periksa langsung di preview | [ ] | [ ] | [ ] | |

@@ -1,8 +1,20 @@
 # Manifest Aset Foto V2.1
 
-Tanggal audit: 21 Juli 2026
+Tanggal audit awal: 21 Juli 2026  
+Inventaris Drive diperiksa ulang: 24 Juli 2026
 
 Folder Drive pendukung berisi 27 PNG dan 1 MP4. Tidak ada aset yang memiliki catatan fotografer, tanggal pengambilan, subjek yang disetujui, status kemasan terkini, atau izin publikasi pemilik. Karena itu tidak ada aset Drive yang disalin ke `public/`.
+
+## Klasifikasi Bukti Phase 1
+
+| Asset ID | Evidence status | Publication decision | Reason |
+| --- | --- | --- | --- |
+| DA-001, DA-002, DA-003, DA-006-DA-013, DA-017 | VERIFIED sebagai artwork/composite, bukan foto dokumentasi | WITHHELD | Dapat menjadi referensi internal, tetapi bukan bukti produk autentik. |
+| DA-004, DA-005, DA-014, DA-015, DA-016, DA-020, DA-021 | INFERRED sebagai kandidat foto produk nyata | WITHHELD | Provenance, produk/kemasan terkini, edit, subjek, dan izin per aset belum lengkap. |
+| DA-018, DA-022-DA-028 | VERIFIED sebagai screenshot atau rekaman QA | INTERNAL ONLY | Bukan aset bisnis untuk halaman publik. |
+| DA-019 | CONFLICT | REJECTED FOR CURRENT SITE | Subjek atau merek tidak cocok dengan identitas yang sedang divalidasi. |
+
+Pernyataan bahwa beberapa foto dibuat langsung oleh project lead berstatus `USER_ASSERTED`; Asset ID yang dimaksud belum diregistrasikan. Izin umum pemilik juga `USER_ASSERTED` dan tidak menggantikan persetujuan per aset.
 
 | Asset ID | Original source | Subject | Authenticity status | Edit performed | Public placement | Alt text | Owner approval |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -41,6 +53,7 @@ Folder Drive pendukung berisi 27 PNG dan 1 MP4. Tidak ada aset yang memiliki cat
 - Sebagian label memperlihatkan klaim atau tanda legal. Foto tersebut tidak boleh dipakai untuk menyiratkan sertifikasi yang telah diverifikasi.
 - Tidak ada foto pemilik, lokasi, proses produksi, packing, penyimpanan, atau konteks usaha yang memenuhi kebutuhan halaman Cerita dan Kontak.
 - Preview tetap memakai panel tipografi netral. Ini bukan placeholder produk dan tidak membawa klaim autentisitas.
+- Tidak ada aset baru pada Drive dan tidak ada foto yang berubah status menjadi layak publikasi pada pemeriksaan 24 Juli 2026.
 
 ## Foto Pengganti yang Masih Dibutuhkan
 

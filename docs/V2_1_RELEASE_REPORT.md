@@ -2,6 +2,8 @@
 
 Tanggal verifikasi: 21 Juli 2026
 
+> Rekonsiliasi Phase 1 pada 24 Juli 2026 menjadi sumber yang lebih baru untuk state, klasifikasi evidence, audit browser, dan blocker. Lihat `PROJECT_TRUTH.md`, `AUDIT_BASELINE_PHASE_1.md`, dan `PHASE_2_IMPLEMENTATION_BACKLOG.md`. Hasil V2.1 di bawah dipertahankan sebagai catatan historis dan tidak boleh dibaca sebagai persetujuan produksi.
+
 ## 1. Branch dan Commit
 
 - Branch: `agent/business-ready-site-pass`
@@ -142,5 +144,4 @@ Branch secara teknis siap ditinjau pemilik, tetapi belum boleh dianggap siap pro
 ## 18. Tindakan Berikutnya
 
 Kirim checklist, register fakta, matriks produk, manifest foto, dan screenshot package kepada pemilik. Setelah pemilik memberi keputusan tertulis, terapkan hanya koreksi yang disetujui, integrasikan foto autentik yang memiliki izin, verifikasi tujuan marketplace, lalu ulangi QA sebelum meminta izin eksplisit untuk menandai PR siap direview.
-
 

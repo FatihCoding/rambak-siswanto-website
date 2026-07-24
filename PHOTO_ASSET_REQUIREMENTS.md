@@ -2,6 +2,8 @@
 
 Status rilis: **belum terpenuhi**. Repository belum memiliki foto usaha autentik yang telah disetujui pemilik. Sampai aset berikut tersedia, situs memakai panel tipografi netral dan tidak menampilkan ilustrasi produk, kemasan, pemilik, fasilitas, atau proses.
 
+Dokumen ini mendefinisikan kebutuhan pengambilan foto. Status setiap aset yang sudah diterima berada di [`docs/PHOTO_ASSET_MANIFEST.md`](docs/PHOTO_ASSET_MANIFEST.md); formulir keputusan owner berada di [`docs/PUBLICATION_APPROVAL_DRAFT_ID.md`](docs/PUBLICATION_APPROVAL_DRAFT_ID.md).
+
 ## Daftar Foto
 
 | ID | Penempatan | Foto yang dibutuhkan | Orientasi dan ukuran minimum | Catatan verifikasi |

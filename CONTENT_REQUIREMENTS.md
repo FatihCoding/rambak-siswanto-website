@@ -2,6 +2,8 @@
 
 Daftar kebutuhan foto autentik dipindahkan ke [`PHOTO_ASSET_REQUIREMENTS.md`](PHOTO_ASSET_REQUIREMENTS.md). Belum ada visual konsep atau foto usaha terverifikasi yang dipublikasikan.
 
+Status per fakta berada di [`docs/BUSINESS_FACTS_REGISTER.md`](docs/BUSINESS_FACTS_REGISTER.md), status per produk di [`docs/PRODUCT_PUBLICATION_MATRIX.md`](docs/PRODUCT_PUBLICATION_MATRIX.md), dan pertanyaan owner di [`docs/OWNER_INTERVIEW_GUIDE_ID.md`](docs/OWNER_INTERVIEW_GUIDE_ID.md). Dokumen ini hanya daftar kebutuhan, bukan bukti atau persetujuan publikasi.
+
 Informasi usaha yang masih perlu dikonfirmasi pemilik:
 
 - nama pengelola yang boleh dipublikasikan;

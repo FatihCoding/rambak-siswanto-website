@@ -2,6 +2,8 @@
 
 Tanggal audit: 21 Juli 2026
 
+Rekonsiliasi Phase 1: 24 Juli 2026. Pernyataan bahwa katalog disusun dari kanal marketplace usaha berstatus `USER_ASSERTED`. Untuk setiap P-001 sampai P-012, nama, ukuran, status aktif, kepemilikan akun, kecocokan tujuan, foto, dan izin publikasi tetap `REQUIRES_VERIFICATION`. Tidak ada baris yang naik menjadi `VERIFIED` pada Phase 1.
+
 Status tautan di bawah memeriksa bentuk URL dan kecocokan teks URL dengan kartu. Status aktif, kepemilikan toko, varian yang tersedia, dan tujuan akhir belum dapat dikonfirmasi melalui marketplace. Shopee menampilkan pembatasan login/traffic; akses Tokopedia diblokir oleh kebijakan keamanan browser QA.
 
 | Product ID | Current name | Verified name | Size | Shopee link type | Tokopedia link type | Authentic photo | Owner approval | Public status | Required correction |
@@ -26,4 +28,5 @@ Status tautan di bawah memeriksa bentuk URL dan kecocokan teks URL dengan kartu.
 - Tiga tautan Tokopedia yang menuju halaman toko tetap dilabeli `Buka Toko`.
 - Materi promosi komposit tidak dianggap foto produk autentik.
 - Harga, stok, rasa, bahan, masa simpan, penyimpanan, sertifikasi, dan kapasitas tidak ditambahkan.
+- HTTP 200 hanya membuktikan respons teknis. Itu tidak membuktikan kepemilikan toko, listing aktif, produk yang sama, ukuran yang benar, atau persetujuan owner.
 

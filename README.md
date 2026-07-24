@@ -11,6 +11,16 @@ Website profil usaha dan katalog ringan untuk Rambak Siswanto. Pembelian retail 
 - Entry point HTML di root repository hanya berfungsi sebagai pengalihan untuk GitHub Pages lama. Halaman aktif tetap berada di `public/`.
 - Harga, stok, promo, pembayaran, alamat pelanggan, dan status pemenuhan tetap dikelola di marketplace atau WhatsApp, bukan di website.
 
+## Governance dan evidence
+
+- Instruksi perubahan dan release: [`AGENTS.md`](AGENTS.md)
+- Ringkasan state dan klasifikasi bukti: [`docs/PROJECT_TRUTH.md`](docs/PROJECT_TRUTH.md)
+- Fakta bisnis: [`docs/BUSINESS_FACTS_REGISTER.md`](docs/BUSINESS_FACTS_REGISTER.md)
+- Produk: [`docs/PRODUCT_PUBLICATION_MATRIX.md`](docs/PRODUCT_PUBLICATION_MATRIX.md)
+- Foto: [`docs/PHOTO_ASSET_MANIFEST.md`](docs/PHOTO_ASSET_MANIFEST.md)
+- Quality gates dan baseline audit: [`docs/QUALITY_GATES.md`](docs/QUALITY_GATES.md), [`docs/AUDIT_BASELINE_PHASE_1.md`](docs/AUDIT_BASELINE_PHASE_1.md)
+- Seluruh fakta atau aset produksi tetap memerlukan evidence dan keputusan pemilik yang traceable.
+
 ## Visual dan konten
 
 - Belum ada foto usaha autentik yang disetujui di repository.
