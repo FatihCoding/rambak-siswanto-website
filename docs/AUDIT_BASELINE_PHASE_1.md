@@ -120,7 +120,7 @@ Proposed event taxonomy: `marketplace_outbound` with `channel` and `route`; `wha
 
 ## Screenshot inventory
 
-The sanitized artifact contains 27 PNG files: desktop/mobile public pages; 768, 360, 390, and 412 homepage states; mobile menu; catalogue filter/search/zero/mobile-card states; footer; no-JavaScript homepage/catalogue; reduced motion; and 404. Raw Drive material is excluded.
+The sanitized artifact contains 29 PNG files: 27 desktop/mobile page and state captures plus evidence of the 768 px FAB/footer overlap and catalogue-card hover affordance. It covers public pages, 768/360/390/412 homepage states, mobile menu, catalogue states, footer, no-JavaScript, reduced motion, and 404. Raw Drive material is excluded.
 
 ## Limitations
 
@@ -129,5 +129,4 @@ The sanitized artifact contains 27 PNG files: desktop/mobile public pages; 768, 
 - Screenshots are Chromium evidence; Opera GX and Edge received focused smoke tests rather than full matrices.
 - Lab performance is not real-user monitoring.
 - The local export had no `.git`; GitHub connector data was authoritative for history, branch, and PR state.
-
 
