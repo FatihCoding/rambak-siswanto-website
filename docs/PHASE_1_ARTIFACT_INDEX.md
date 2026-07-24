@@ -8,10 +8,10 @@ The downloadable package is delivered through the associated Codex task rather t
 | Item | Value |
 | --- | --- |
 | Filename | `rambak-siswanto-phase1-audit-751f5a55.zip` |
-| ZIP size | 5,404,038 bytes |
+| ZIP size | 5,404,222 bytes |
 | File entries | 61 |
 | Screenshots | 29 |
-| SHA-256 | `a53206fd07995fb5e940e7c220026234c112cce72407af1e46dbb14dada18a65` |
+| SHA-256 | `defa850d4db6504d3f705388c51cac7b024938a441085573ddb9636583b51479` |
 | Integrity list | `MANIFEST.sha256` inside the ZIP |
 
 Repository-readable contents:
@@ -24,5 +24,4 @@ Repository-readable contents:
 - [`QUALITY_GATES.md`](QUALITY_GATES.md)
 
 The ZIP was reopened after creation and contained 61 file entries, including 29 PNG screenshots. It excludes raw Drive assets, recordings, private conversations, legal source documents, customer/transaction data, credentials, and private links.
-
 
