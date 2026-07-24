@@ -5,6 +5,7 @@
   --brand-muted: #665751;
   --brand-paper: #f7efe5;
   --brand-cream: #fffaf3;
+  --on-dark-accent: #f3b5ad;
   --brand-line: rgba(65, 37, 31, 0.16);
   --whatsapp: #187544;
   --whatsapp-dark: #105b34;
@@ -230,6 +231,24 @@ header .mobile-nav {
 .btn.ghost:hover,
 .text-link:hover {
   background: rgba(165, 29, 36, 0.07);
+  color: var(--brand-red-dark);
+}
+
+.story-section .section-kicker,
+.story-section .story-card span,
+.final-cta .section-kicker {
+  color: var(--on-dark-accent);
+}
+
+.final-cta .btn.secondary {
+  border-color: var(--brand-cream);
+  background: var(--brand-cream);
+  color: var(--brand-red-dark);
+}
+
+.final-cta .btn.secondary:hover {
+  border-color: #fff;
+  background: #fff;
   color: var(--brand-red-dark);
 }
 

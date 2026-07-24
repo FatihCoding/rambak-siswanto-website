@@ -26,6 +26,27 @@ const canonicalFor = (route) => `${productionOrigin}${route}`;
 const report = (condition, message) => {
   if (!condition) errors.push(message);
 };
+const rgbForHex = (value) => {
+  const channels = value.replace("#", "").match(/.{2}/g);
+  return channels?.map((channel) => Number.parseInt(channel, 16)) || [];
+};
+const luminanceFor = (value) => {
+  const channels = rgbForHex(value).map((channel) => {
+    const normalized = channel / 255;
+    return normalized <= 0.04045
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+};
+const contrastRatio = (foreground, background) => {
+  const foregroundLuminance = luminanceFor(foreground);
+  const backgroundLuminance = luminanceFor(background);
+  return (
+    (Math.max(foregroundLuminance, backgroundLuminance) + 0.05) /
+    (Math.min(foregroundLuminance, backgroundLuminance) + 0.05)
+  );
+};
 
 const htmlFiles = (await readdir(publicRoot))
   .filter((name) => name.endsWith(".html"))
@@ -95,7 +116,16 @@ for (const [fileName, html] of pages) {
 
   for (const match of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
-      JSON.parse(match[1]);
+      const structuredData = JSON.parse(match[1]);
+      const records = Array.isArray(structuredData)
+        ? structuredData
+        : [structuredData, ...(structuredData["@graph"] || [])];
+      for (const record of records) {
+        report(
+          !Object.hasOwn(record, "sameAs"),
+          `${fileName}: sameAs is withheld until marketplace ownership and publication permission are verified`
+        );
+      }
     } catch (error) {
       errors.push(`${fileName}: invalid JSON-LD (${error.message})`);
     }
@@ -143,6 +173,30 @@ for (const [fileName, css] of allPublicText.filter(([name]) => name.endsWith(".c
     report(await exists(target), `${fileName}: missing CSS asset ${reference}`);
   }
 }
+
+const brandCss = await readFile(path.join(publicRoot, "brand.css"), "utf8");
+const colorVariable = (name) =>
+  brandCss.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"))?.[1];
+const onDarkAccent = colorVariable("on-dark-accent");
+const darkSurface = colorVariable("ink-deep");
+const creamSurface = colorVariable("brand-cream");
+const darkRedText = colorVariable("brand-red-dark");
+report(
+  Boolean(onDarkAccent && darkSurface && contrastRatio(onDarkAccent, darkSurface) >= 4.5),
+  "brand.css: on-dark accent must meet WCAG AA contrast against the dark surface"
+);
+report(
+  Boolean(darkRedText && creamSurface && contrastRatio(darkRedText, creamSurface) >= 4.5),
+  "brand.css: final CTA text must meet WCAG AA contrast against its button surface"
+);
+report(
+  /\.story-section\s+\.section-kicker[\s\S]*?color:\s*var\(--on-dark-accent\)/.test(brandCss),
+  "brand.css: dark story labels must use the accessible on-dark accent"
+);
+report(
+  /\.final-cta\s+\.btn\.secondary\s*\{[\s\S]*?background:\s*var\(--brand-cream\)[\s\S]*?color:\s*var\(--brand-red-dark\)/.test(brandCss),
+  "brand.css: final secondary CTA must use the accessible filled treatment"
+);
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 for (const fileName of htmlFiles.filter((name) => name !== "404.html")) {
